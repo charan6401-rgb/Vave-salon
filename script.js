@@ -19,16 +19,26 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Mobile Navigation ---------- */
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
+  const navClose = document.getElementById('navClose');
+  const navScrim = document.getElementById('navScrim');
+
+  const openMenu = () => {
+    navLinks.classList.add('open');
+    navScrim.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
 
   const closeMenu = () => {
     navLinks.classList.remove('open');
+    navScrim.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
   };
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  });
+  navToggle.addEventListener('click', openMenu);
+  navClose.addEventListener('click', closeMenu);
+  navScrim.addEventListener('click', closeMenu);
 
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
