@@ -108,15 +108,26 @@ section { scroll-margin-top: 90px; }
 /* ===== NAVBAR ===== */
 .navbar {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(250,247,244,0.85);
-  backdrop-filter: blur(10px);
+  background: transparent;
   border-bottom: 1px solid transparent;
   transition: var(--transition);
 }
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(250,247,244,0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+  transition: var(--transition);
+}
 .navbar.scrolled {
-  background: rgba(250,247,244,0.98);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 20px rgba(10,10,10,0.06);
+}
+.navbar.scrolled::before {
+  background: rgba(250,247,244,0.98);
 }
 .nav-container {
   max-width: var(--container);
