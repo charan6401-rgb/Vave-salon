@@ -62,9 +62,13 @@
 
 <header class="navbar" id="navbar">
   <div class="nav-container">
-    <a href="#home" class="brand">VAVE <span>SALON</span></a>
+    <a href="#home" class="brand">
+      <img src="assets/images/vave-salon-logo.png" alt="Vave Salon Hayathnagar logo" class="brand-logo">
+      <span class="brand-text">VAVE <span>SALON</span></span>
+    </a>
 
     <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <button class="nav-close" id="navClose" aria-label="Close menu"><i data-lucide="x"></i></button>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -76,13 +80,14 @@
         <a href="https://wa.me/919885550414" class="btn btn-primary" target="_blank" rel="noopener"><i data-lucide="message-circle"></i><span>WhatsApp</span></a>
       </div>
     </nav>
+    <div class="nav-scrim" id="navScrim"></div>
 
     <div class="nav-actions">
       <a href="tel:+919885550414" class="btn btn-ghost" aria-label="Call Vave Salon"><i data-lucide="phone"></i><span>Call</span></a>
       <a href="https://wa.me/919885550414" class="btn btn-primary" target="_blank" rel="noopener" aria-label="WhatsApp Vave Salon"><i data-lucide="message-circle"></i><span>WhatsApp</span></a>
     </div>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -467,4 +472,4 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="script.js"></script>
 </body>
-</html>
+                                 </html>
